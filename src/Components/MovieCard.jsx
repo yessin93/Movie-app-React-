@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import StarRating from './StarRating'
 
 const MovieCard = ({movie}) => {
@@ -9,7 +10,9 @@ const MovieCard = ({movie}) => {
         <h3>{movie.name}</h3>
         <StarRating rating={movie.rating}/>
         <p>Release date:{movie.Date}</p>
-        <p>{movie.Description}</p>
+        <button className='btn-info'>
+          <Link to={`/movie/${movie.id}`}>movie details</Link>
+        </button>
     </div>
   )
 }
